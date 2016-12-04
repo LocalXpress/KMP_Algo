@@ -6,19 +6,23 @@ using namespace std;
 
 int main()
 {
-    string a="abcdabca";
-    vector<int>b;
-    int i,j=0;
-    b.push_back(0);
+    string a="aabaabaaa";
+    vector<int>f;
+    int i=1,j=0;
+    f.push_back(0);
 
-    for(i=1;i<a.size();i++)
+    while (i < a.size())
     {
-        if(a[j]==a[i])
-            {cout<<a[j]<<" = "<<a[i]<<endl;b[i]=j++;}
-        else if(!(a[j]==a[i])&&j)
-            {j=b[j-1];cout<<" "<<j<<" "<<endl;}
+        if (a[i] == a[j])
+        {   j++; f.push_back(j); i++; }
         else
-            {cout<<a[j]<<" = "<<a[i]<<endl;b[i]=0;}
+        {   if (j != 0)
+                j = f[j-1];
+            else
+            { f.push_back(0); i++;}
+        }
     }
 
+    for(i=0;i<f.size();i++)
+        cout<<" "<<f[i]<<" ";
 }
