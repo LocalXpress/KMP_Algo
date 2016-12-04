@@ -14,11 +14,11 @@ int main()
     for(i=1;i<a.size();i++)
     {
         if(a[j]==a[i])
-            {cout<<a[j]<<" = "<<a[i]<<endl;j++;}
+            {cout<<a[j]<<" = "<<a[i]<<endl;b[i]=j++;}
         else if(!(a[j]==a[i])&&j)
-            {j=(b[j]-1);}
+            {j=b[j-1];cout<<" "<<j<<" "<<endl;}
         else
-            {cout<<a[j]<<" = "<<a[i]<<endl;}
+            {cout<<a[j]<<" = "<<a[i]<<endl;b[i]=0;}
     }
 
 }
