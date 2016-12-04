@@ -1,3 +1,4 @@
+//Open the program in Notepad++
 #include<iostream>
 #include<vector>
 #include<algorithm>
