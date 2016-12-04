@@ -6,17 +6,17 @@ using namespace std;
 
 int main()
 {
-    string a="aabaabaaa";
+    string a="aabaabaaa",b="aa";
     vector<int>f;
     int i=1,j=0;
     f.push_back(0);
 
-    while (i < a.size())
+    while (i < a.size())//Calculating the Pattern Factor of the parent string
     {
         if (a[i] == a[j])
-        {   j++; f.push_back(j); i++; }
+        {f.push_back(++j); i++;}
         else
-        {   if (j != 0)
+        {   if (j)
                 j = f[j-1];
             else
             { f.push_back(0); i++;}
